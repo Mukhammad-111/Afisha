@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b6e876db-c59b-4b77-91eb-d3c9e4eaa98a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Afisha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Afisha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_app/serializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/serializer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movie_app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/movie_app/views.py" afterDir="false" />
-    </list>
+    <list default="true" id="b6e876db-c59b-4b77-91eb-d3c9e4eaa98a" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -90,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1741401992088</updated>
       <workItem from="1741401997144" duration="8531000" />
-      <workItem from="1741767952663" duration="4976000" />
+      <workItem from="1741767952663" duration="7817000" />
     </task>
     <servers />
   </component>
