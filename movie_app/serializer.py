@@ -51,3 +51,19 @@ class ReviewDetailSerializer(serializers.ModelSerializer):
         model = models.Review
         fields = '__all__'
 
+
+class DirectorValidateSerializer(serializers.Serializer):
+    name = serializers.CharField(required=True, min_length=2, max_length=255)
+
+
+class MovieValidateSerializer(serializers.Serializer):
+    title = serializers.CharField(max_length=255)
+    description = serializers.CharField(required=False)
+    duration = serializers.FloatField()
+    director_id = serializers.IntegerField(min_value=1)
+
+
+class ReviewValidateSerializer(serializers.Serializer):
+    text = serializers.CharField(max_length=255)
+    stars = serializers.IntegerField(default=4, min_value=1, max_value=5)
+    movie_id = serializers.IntegerField(min_value=1)
