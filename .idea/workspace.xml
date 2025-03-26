@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b6e876db-c59b-4b77-91eb-d3c9e4eaa98a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/movie_app/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Afisha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Afisha/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Afisha/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Afisha/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

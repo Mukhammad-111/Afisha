@@ -1,13 +1,14 @@
 from django.urls import path
 from . import views
+from utils.constants import LIST_CREATE, RETRIEVE_UPDATE_DESTROY
 
 
 urlpatterns = [
-    path('directors/', views.director_list_create_api_view),
-    path('directors/<int:id>/', views.director_detail_api_view),
-    path('movies/', views.movies_list_create_api_view),
-    path('movies/<int:id>/', views.movies_detail_api_view),
-    path('movies/reviews/', views.movies_reviews_api_view),
-    path('reviews/', views.reviews_list_create_api_view),
-    path('reviews/<int:id>/', views.reviews_detail_api_view),
+    path('directors/', views.DirectorListCreateAPIView.as_view()),
+    path('directors/<int:id>/', views.DirectorRetrieveUpdateDestroyAPIView.as_view()),
+    path('movies/', views.MovieModelViewSet.as_view(LIST_CREATE)),
+    path('movies/<int:id>/', views.MovieModelViewSet.as_view(RETRIEVE_UPDATE_DESTROY)),
+    path('movies/reviews/', views.MoviesReviewsListAPIView.as_view()),
+    path('reviews/', views.ReviewsModelViewSet.as_view(LIST_CREATE)),
+    path('reviews/<int:id>/', views.ReviewsModelViewSet.as_view(RETRIEVE_UPDATE_DESTROY)),
 ]

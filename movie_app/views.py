@@ -5,6 +5,13 @@ from .serializer import (DirectorSerializer, DirectorDetailSerializer, MovieSeri
  ReviewSerializer, ReviewDetailSerializer, MovieReviewSerializer, DirectorValidateSerializer,
  MovieValidateSerializer, ReviewValidateSerializer)
 from rest_framework import status
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView, ListAPIView
+from rest_framework.viewsets import ModelViewSet
+
+
+class DirectorListCreateAPIView(ListCreateAPIView):
+    queryset = Director.objects.all()
+    serializer_class = DirectorSerializer
 
 
 @api_view(['GET', 'POST'])
@@ -28,6 +35,13 @@ def director_list_create_api_view(request):
         return Response(data=DirectorDetailSerializer(director).data, status=status.HTTP_201_CREATED)
 
 
+
+class DirectorRetrieveUpdateDestroyAPIView(RetrieveUpdateDestroyAPIView):
+    queryset = Director.objects.all()
+    serializer_class = DirectorDetailSerializer
+    lookup_field = 'id'
+
+
 @api_view(['GET', 'PUT', 'DELETE'])
 def director_detail_api_view(request, id):
     try:
@@ -47,6 +61,33 @@ def director_detail_api_view(request, id):
         director.name = serializer.validated_data.get('name')
         director.save()
         return Response(data=DirectorDetailSerializer(director).data, status=status.HTTP_201_CREATED)
+
+
+class MovieModelViewSet(ModelViewSet):
+    queryset = Movie.objects.all()
+    serializer_class = MovieSerializer
+    lookup_field = 'id'
+
+    def create(self, request, *args, **kwargs):
+        serializer = MovieValidateSerializer(data=request.data)
+        if not serializer.is_valid():
+            return Response(status=status.HTTP_400_BAD_REQUEST, data=serializer.errors)
+
+        title = serializer.validated_data.get('title')
+        description = serializer.validated_data.get('description')
+        duration = serializer.validated_data.get('duration')
+        director_id = serializer.validated_data.get('director_id')
+
+        movie = Movie(
+            title=title,
+            description=description,
+            duration=duration,
+            director_id=director_id
+        )
+        movie.save()
+
+        return Response(data=MovieDetailSerializer(movie).data, status=status.HTTP_201_CREATED)
+
 
 
 @api_view(['GET', 'POST'])
@@ -100,6 +141,12 @@ def movies_detail_api_view(request, id):
         return Response(data=MovieDetailSerializer(movie).data, status=status.HTTP_201_CREATED)
 
 
+class ReviewsModelViewSet(ModelViewSet):
+    queryset = Review.objects.all()
+    serializer_class = ReviewSerializer
+    lookup_field = 'id'
+
+
 @api_view(['GET', "POST"])
 def reviews_list_create_api_view(request):
     if request.method == 'GET':
@@ -144,6 +191,12 @@ def reviews_detail_api_view(request, id):
         review.movie_id = serializer.validated_data.get('movie_id')
         review.save()
         return Response(data=ReviewDetailSerializer(review).data, status=status.HTTP_201_CREATED)
+
+
+
+class MoviesReviewsListAPIView(ListAPIView):
+    queryset = Movie.objects.all()
+    serializer_class = MovieReviewSerializer
 
 
 @api_view(['GET'])
