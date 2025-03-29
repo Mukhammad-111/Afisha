@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b6e876db-c59b-4b77-91eb-d3c9e4eaa98a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Afisha/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Afisha/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +88,8 @@
       <workItem from="1741401997144" duration="8531000" />
       <workItem from="1741767952663" duration="7817000" />
       <workItem from="1742023751040" duration="4865000" />
+      <workItem from="1742970087690" duration="6165000" />
+      <workItem from="1743250531179" duration="1165000" />
     </task>
     <servers />
   </component>
